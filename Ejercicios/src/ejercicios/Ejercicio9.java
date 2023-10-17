@@ -4,7 +4,7 @@ package ejercicios;
 import java.util.Scanner;
 //import javax.swing.JOptionPane;
 
-public class EjercicioH {
+public class Ejercicio9 {
     
     public static void main(String [] args){
         Scanner sc = new Scanner(System.in);

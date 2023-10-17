@@ -4,7 +4,7 @@ package ejercicios;
 
 import java.util.Scanner;
 
-public class EjercicioE {
+public class Ejercicio6 {
     public static void main(String[] args) {
         //— Versión con Scanner
         Scanner sc = new Scanner(System.in);

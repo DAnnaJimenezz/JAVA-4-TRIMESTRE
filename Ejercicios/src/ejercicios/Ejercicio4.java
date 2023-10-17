@@ -3,7 +3,7 @@ package ejercicios;
 //import javax.swing.JOptionPane;
 import java.util.Scanner;
 
-public class EjercicioD {
+public class Ejercicio4 {
     
     public static void main(String[] args) {
          // — Versión con Scanner
