@@ -1,8 +1,7 @@
-package salariojoptionpane;
-
+package salarioventana;
 import javax.swing.JOptionPane;
 
-public class SalarioJOptionPane {
+public class SalarioVentana {
 
     public static void main(String[] args) {
         
@@ -13,11 +12,12 @@ public class SalarioJOptionPane {
         
         
         String nombre = JOptionPane.showInputDialog("ESCRIBA SU NOMBRE: ");
-        int dias = Integer.parseInt(JOptionPane.showInputDialog ("ESCRIBA LOS DIAS QUE HA TRABAJADO"));
-        
+        int dias = Integer.parseInt(JOptionPane.showInputDialog ("ESCRIBA LOS DIAS QUE HA TRABAJADO: "));
+
         valor_dia = salario / dia_mes;
+        sd = valor_dia*dias;
+        JOptionPane.showMessageDialog(null, "SU SALARIO MENSUAL ES: " + sd);
         JOptionPane.showMessageDialog(null, "SU SALARIO MENSUAL ES: " + valor_dia);
 
     }
-
 }
