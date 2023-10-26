@@ -9,6 +9,8 @@ package calculadoraestandar;
  * @author Admin
  */
 public class Calculadora extends javax.swing.JFrame {
+    int  num1, num2;
+    String signo;
 
     /**
      * Creates new form Calculadora
@@ -43,6 +45,7 @@ public class Calculadora extends javax.swing.JFrame {
         btnmultiplicacion = new javax.swing.JButton();
         btnrestar = new javax.swing.JButton();
         btnsumar = new javax.swing.JButton();
+        btnigual = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 204));
@@ -155,18 +158,46 @@ public class Calculadora extends javax.swing.JFrame {
         btndivision.setBackground(new java.awt.Color(204, 204, 204));
         btndivision.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         btndivision.setText("/");
+        btndivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndivisionActionPerformed(evt);
+            }
+        });
 
         btnmultiplicacion.setBackground(new java.awt.Color(204, 204, 204));
         btnmultiplicacion.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         btnmultiplicacion.setText("X");
+        btnmultiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmultiplicacionActionPerformed(evt);
+            }
+        });
 
         btnrestar.setBackground(new java.awt.Color(204, 204, 204));
         btnrestar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         btnrestar.setText("-");
+        btnrestar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrestarActionPerformed(evt);
+            }
+        });
 
         btnsumar.setBackground(new java.awt.Color(204, 204, 204));
         btnsumar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         btnsumar.setText("+");
+        btnsumar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsumarActionPerformed(evt);
+            }
+        });
+
+        btnigual.setBackground(new java.awt.Color(204, 204, 204));
+        btnigual.setText("=");
+        btnigual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnigualActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,7 +228,9 @@ public class Calculadora extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(btndos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
-                                .addComponent(btntres, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btntres, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                                    .addComponent(btnigual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnmultiplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,7 +247,7 @@ public class Calculadora extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(92, 92, 92)
                         .addComponent(jLabel1)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,7 +259,7 @@ public class Calculadora extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnborrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnsiete, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(btnsiete, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                     .addComponent(btnocho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnnueve, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
@@ -245,7 +278,8 @@ public class Calculadora extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnrestar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btncero, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btncero, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnigual, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(btnsumar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -309,6 +343,54 @@ public class Calculadora extends javax.swing.JFrame {
         pantalla.setText("");
     }//GEN-LAST:event_btnborrarActionPerformed
 
+    private void btndivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndivisionActionPerformed
+        // TODO add your handling code here:
+        num1=Integer.parseInt(pantalla.getText());
+        signo="/";
+        pantalla.setText("");
+    }//GEN-LAST:event_btndivisionActionPerformed
+
+    private void btnmultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmultiplicacionActionPerformed
+        // TODO add your handling code here:
+        num1=Integer.parseInt(pantalla.getText());
+        signo="*";
+        pantalla.setText("");
+    }//GEN-LAST:event_btnmultiplicacionActionPerformed
+
+    private void btnrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrestarActionPerformed
+        // TODO add your handling code here:
+        num1=Integer.parseInt(pantalla.getText());
+        signo="-";
+        pantalla.setText("");
+    }//GEN-LAST:event_btnrestarActionPerformed
+
+    private void btnsumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsumarActionPerformed
+        // TODO add your handling code here:
+        num1=Integer.parseInt(pantalla.getText());
+        signo="+";
+        pantalla.setText("");
+    }//GEN-LAST:event_btnsumarActionPerformed
+
+    private void btnigualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnigualActionPerformed
+        // TODO add your handling code here:
+        
+        num2=Integer.parseInt(pantalla.getText());
+        
+        switch(signo){
+            case "+":
+                pantalla.setText(Integer.toString(num1+num2));
+                break;
+            case "-":
+                pantalla.setText(Integer.toString(num1-num2));
+                break;
+            case "*":
+                pantalla.setText(Integer.toString(num1*num2));
+                break;
+            case "/":
+                pantalla.setText(Integer.toString(num1/num2));
+                break;
+    }//GEN-LAST:event_btnigualActionPerformed
+    }
     /**
      * @param args the command line arguments
      */
@@ -351,6 +433,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton btncuarto;
     private javax.swing.JButton btndivision;
     private javax.swing.JButton btndos;
+    private javax.swing.JButton btnigual;
     private javax.swing.JButton btnmultiplicacion;
     private javax.swing.JButton btnnueve;
     private javax.swing.JButton btnocho;

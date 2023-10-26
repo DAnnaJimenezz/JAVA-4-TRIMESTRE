@@ -57,7 +57,10 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btntres" min="-2" pref="53" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="btntres" pref="53" max="32767" attributes="0"/>
+                                  <Component id="btnigual" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -83,7 +86,7 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -97,7 +100,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnborrar" max="32767" attributes="0"/>
-                  <Component id="btnsiete" pref="37" max="32767" attributes="0"/>
+                  <Component id="btnsiete" pref="43" max="32767" attributes="0"/>
                   <Component id="btnocho" max="32767" attributes="0"/>
                   <Component id="btnnueve" max="32767" attributes="0"/>
               </Group>
@@ -121,6 +124,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnrestar" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="btncero" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="btnigual" alignment="0" pref="43" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnsumar" min="-2" pref="40" max="-2" attributes="0"/>
@@ -310,6 +314,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="/"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btndivisionActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnmultiplicacion">
       <Properties>
@@ -321,6 +328,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="X"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmultiplicacionActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnrestar">
       <Properties>
@@ -332,6 +342,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnrestarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnsumar">
       <Properties>
@@ -343,6 +356,20 @@
         </Property>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnsumarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnigual">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="="/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnigualActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
